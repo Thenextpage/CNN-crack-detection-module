@@ -1,0 +1,12 @@
+from picamera import PiCamera
+from time import sleep
+import keyboard 
+camera = PiCamera()
+
+# camera.hflip = 1
+# camera.vflip = 1
+camera.start_preview()
+camera.resolution = (100, 100)
+sleep(5)
+camera.stop_preview()  
+# making a loop
