@@ -47,9 +47,9 @@ as a result we could successfuly be able to measure the location, and the width 
 
 before downloading and executing the program you would need to install these libraries.
 
-Scikit-image
-OpenCV2
-Tensorflow
-Darkflow(YOLO for Tensorflow)
+- Scikit-image
+- OpenCV2
+- Tensorflow
+- Darkflow(YOLO for Tensorflow)
 
-also
+You also need the pb file and the cfg file for the trained image data, but you also can use the .weights file as documented in the darkflow github page : https://github.com/thtrieu/darkflow 
