@@ -9,4 +9,24 @@ this module basically runs on a raspberry pi so a basic
 - ultrasonic distance sensor
 - digital button switch
 - raspberry pi display (optional)
-- wires etc
+- wires and resistor etc
+
+![Screen Shot 2021-09-07 at 9 31 46 PM (2)](https://user-images.githubusercontent.com/30145956/132345081-c42e8d6a-d649-4009-99bb-f8d9625b9fdd.png)
+ 
+For the case we used a 3d printer using the model found in this link https://pinshape.com/items/23208-3d-printed-raspberry-pi-7-inch-touchscreen-display-case
+
+# How does it work
+
+The function of the device can be explained in 2 parts.
+  1. The crack detection using the camera and the CNN & Yolo algorithm
+  2. The calculation of the width of the crack by measuring the distance of the crack and the pixel image counting
+
+For the detection, we used the training data collected from the campus building of Middle East Technical University (METU) and a set of crack images provided by Utah State University (USU). Label Img was used as a tool for performing the data labeling process. 
+
+The value of the loss function started at 100-106, which is the value in step 1, decreased significantly as the learning progressed, and then the value of the loss function stagnated at 1.9-2.7 from 21,000 steps. Due to the characteristics of Darkflow, which can only confirm the loss function, the weight obtained from 20,000 steps was stored in units of 1,000 steps and the accuracy was tested. The most accurate weight file was the weight in 24,000 steps, so the weight file in 24,000 steps was selected as the file to be used for the program.
+
+with the database that we labeled and trained, we had about 80% of accuracy of detecting various types of cracks, such as linear cracks, and the y shaped cracks.
+
+After we detected the location of the cracks using the image data from the camera, we then calculated the width of the cracks, which is achevied by calculating the distance of the crack and the calculating the pixel width of the cracks.
+
+lets say that an object A is being filmed on the camera and it is 
