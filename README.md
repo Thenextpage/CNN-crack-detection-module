@@ -29,4 +29,16 @@ with the database that we labeled and trained, we had about 80% of accuracy of d
 
 After we detected the location of the cracks using the image data from the camera, we then calculated the width of the cracks, which is achevied by calculating the distance of the crack and the calculating the pixel width of the cracks.
 
-lets say that an object A is being filmed on the camera and it is 
+lets say that an object A is being filmed on the camera and it is occupying H amount of pixels at a W distance from the camera. When the object gets farther from the camera by 2W, the image pixel will only occupy by a half of an H, which is 1/2 H pixels. Therefore we can conclude that if we multiply the pixel count and the distance from the camera, the constant will be the same at any distance.
+
+![Screen Shot 2021-09-07 at 9 54 32 PM (2)](https://user-images.githubusercontent.com/30145956/132348205-5bf6b3f4-63fe-4066-a55d-1fbec035bbdc.png)
+
+Skeletonization method was used to measure the width of cracks, which has irregular patterns and shapes. Skeletonization is the process of reducing image data to skeleton form. Skeleton represents the position of the center of the circle in contact with both sides when the original image is drawn in a circle inside the figure. The distance between the skeleton extracted through Skeletonization and the side of the figure may be obtained as a pixel value. 
+
+A library of scikit-image was used to obtain the skeleton of cracks. The original crack image was converted into gray scaling, color inversion, and binary black and white images. Figure 21 is the original image from the left, the binary black-and-white processing image, the skeleton result, the binary black-and-white image, and the result of visualizing the distance to skeleton as gradation.
+
+![Screen Shot 2021-09-07 at 9 59 13 PM (2)](https://user-images.githubusercontent.com/30145956/132348858-80449ce7-f8f2-4b03-bf9c-d4203af00bcd.png)
+
+as a result we could successfuly be able to measure the location, and the width of the cracks at the accuracy of ±0.2mm.
+
+![Screen Shot 2021-09-07 at 10 01 12 PM (2)](https://user-images.githubusercontent.com/30145956/132349145-eda2dc38-d0e6-4dc6-811c-07831f68383d.png)
