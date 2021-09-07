@@ -42,3 +42,14 @@ A library of scikit-image was used to obtain the skeleton of cracks. The origina
 as a result we could successfuly be able to measure the location, and the width of the cracks at the accuracy of ±0.2mm.
 
 ![Screen Shot 2021-09-07 at 10 01 12 PM (2)](https://user-images.githubusercontent.com/30145956/132349145-eda2dc38-d0e6-4dc6-811c-07831f68383d.png)
+
+# What libraries you would need
+
+before downloading and executing the program you would need to install these libraries.
+
+Scikit-image
+OpenCV2
+Tensorflow
+Darkflow(YOLO for Tensorflow)
+
+also
